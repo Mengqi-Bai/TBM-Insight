@@ -1,0 +1,35 @@
+{
+  "name": "@tbm-insight/host-directory-picker",
+  "description": "Abstract workspace-directory picking seam (ctx.directoryPicker) for the TBM Insight web GUI host",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "@tbm-insight/api-terminal-controller",
+  "description": "Session-owned interactive terminals with shell discovery, screen recovery and typed Remote control",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-gateway"
+      ],
+      "external": [
+        "@tbm-insight/api-gateway/client"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/deque": "workspace:*",
+    "@tbm-insight/lazy-require": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "@xterm/addon-serialize": "^0.14.0",
+    "@xterm/headless": "^6.0.0",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/remote-mock": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/util-crypto": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ]
+}

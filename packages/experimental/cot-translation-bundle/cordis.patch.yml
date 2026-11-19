@@ -1,0 +1,8 @@
+- insert:
+    - id: translator
+      name: '@tbm-insight/experimental-translator'
+    - id: cot-translation
+      name: '@tbm-insight/experimental-client-ui-cot-translation'
+      config:
+        provider: bing
+        targetLanguage: auto

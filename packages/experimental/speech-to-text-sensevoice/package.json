@@ -1,0 +1,50 @@
+{
+  "name": "@tbm-insight/experimental-speech-to-text-sensevoice",
+  "description": "Local SenseVoice ONNX transcription with a managed sherpa-onnx process",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./worker": {
+      "types": "./lib/types/worker.d.ts",
+      "default": "./lib/worker.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/worker.js",
+    "runtime/assets.json",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "@tbm-insight/timeout": "workspace:*",
+    "zod": "4.4.3",
+    "sherpa-onnx-node": "1.13.8"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/experimental-speech-to-text": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/experimental-speech-to-text": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "tsx": "^4.23.13"
+  }
+}

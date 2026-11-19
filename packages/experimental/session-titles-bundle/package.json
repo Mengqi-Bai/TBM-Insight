@@ -1,0 +1,45 @@
+{
+  "name": "@tbm-insight/experimental-session-titles-bundle",
+  "description": "Refresh session titles as new human prompts arrive.",
+  "version": "0.2.2-alpha.3",
+  "icon": "./icon.svg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "docs",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "tbm": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@tbm-insight/session-title-all-prompts-llm": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "@tbm-insight/sdk-app",
+  "description": "The tbm SDK profile bundle: stdio JSON-RPC serving and process lifecycle over tbm-base",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "tbm": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@tbm-insight/cmdline": "workspace:*",
+    "@tbm-insight/sdk-jsonrpc-server": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "commander": "^15.0.0",
+    "@tbm-insight/skill-office": "workspace:*",
+    "@tbm-insight/tool-workspace-dependencies": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-file-upload": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/schedule": "workspace:*",
+    "@tbm-insight/time-context": "workspace:*",
+    "@tbm-insight/tool-schedule": "workspace:*",
+    "@tbm-insight/tool-ask-user": "workspace:*",
+    "@tbm-insight/tool-present": "workspace:*",
+    "@tbm-insight/file-reference-local": "workspace:*",
+    "@tbm-insight/deliverable-file-references": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

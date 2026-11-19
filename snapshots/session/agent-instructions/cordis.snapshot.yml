@@ -1,0 +1,45 @@
+# Keyless replay counterpart of agent-instructions.cordis.yml: apply the
+# scenario values and model swap to the ACP profile.
+- id: llm-deepseek
+  name: '@tbm-insight/llm-deepseek-api-key'
+  disabled: true
+
+- id: agent-default-model
+  name: '@tbm-insight/agent-default-model'
+  config:
+    provider: deepseek-official
+    model: deepseek-v4-flash
+
+- id: session-persistence-jsonl
+  name: '@tbm-insight/session-persistence-jsonl'
+  config:
+    root: !!js tbmHomePath('sessions')
+    compression: none
+
+- id: agent-instructions
+  name: '@tbm-insight/agent-instructions'
+  config:
+    maxBytes: 65536
+    projectRootMarkers:
+      - .tbm-project
+
+- id: system-prompt
+  name: '@tbm-insight/system-prompt'
+  config:
+    personaPrefix: |
+      You are a coding assistant powered by the {{model}} model.
+
+      Verify your work by running the code or tests. Keep answers brief and factual.
+
+- insert:
+    - id: llm-replay
+      name: '@tbm-insight/llm-replay'
+      config:
+        providers:
+          - id: deepseek-official
+            name: DeepSeek
+            models:
+              - id: deepseek-v4-flash
+              - id: deepseek-v4-pro
+    - id: workspace-context-compaction
+      name: '../../../packages/test-support/session-snapshot/tests/fixtures/workspace-context-compaction.ts'

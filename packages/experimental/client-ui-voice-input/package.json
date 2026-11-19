@@ -1,0 +1,78 @@
+{
+  "name": "@tbm-insight/experimental-client-ui-voice-input",
+  "description": "Record speech and insert editable text into the conversation draft",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/experimental-api-speech-to-text": "workspace:*",
+    "@tbm-insight/experimental-speech-to-text": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@testing-library/react": "^16.3.3",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-ui-plugin-manager": "workspace:*"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-primitives",
+        "@tbm-insight/api-gateway",
+        "@tbm-insight/client-ui-plugin-manager"
+      ],
+      "platform": "web",
+      "external": [
+        "@tbm-insight/api-gateway/client"
+      ]
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": "@tbm-insight/cordis-host-runner",
+  "description": "Dynamic package definition registry, host-half sandbox lifecycle, and invoke handler table for model-mounted dual-half packages",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-timer": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  }
+}

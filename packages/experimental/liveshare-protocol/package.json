@@ -1,0 +1,32 @@
+{
+  "name": "@tbm-insight/experimental-liveshare-protocol",
+  "description": "Liveshare wire frames and the identity contract shared by the owner bundle and the Relay",
+  "version": "0.2.2-alpha.3",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

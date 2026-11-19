@@ -1,0 +1,58 @@
+{
+  "name": "@tbm-insight/token-meter",
+  "description": "Replay-aware token measurement service (ctx.tokenMeter) for the TBM Insight",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./estimate": {
+      "types": "./lib/types/estimate.d.ts",
+      "default": "./lib/types/estimate.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/compaction": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/llm-retry": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/compaction-image-offload": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/compaction": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/llm-retry": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/compaction-image-offload": "workspace:*"
+  }
+}

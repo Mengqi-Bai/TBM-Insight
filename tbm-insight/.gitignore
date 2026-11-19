@@ -1,0 +1,12 @@
+/outputs/
+/.tbm-dev/
+/.local/
+/.runtime/
+/research/projects/
+/research/.venv/
+/research/config.local.yaml*
+/knowledge/sources/
+/knowledge/index/
+/knowledge/versions/
+/knowledge/results/
+__pycache__/

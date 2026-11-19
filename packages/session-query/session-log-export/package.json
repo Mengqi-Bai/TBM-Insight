@@ -1,0 +1,82 @@
+{
+  "name": "@tbm-insight/session-log-export",
+  "description": "Web Session-log ZIP export and Session Markdown copy",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/session-format": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "fflate": "^0.8.2",
+    "@tbm-insight/brand": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-ui-commands": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-message-feedback": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "react": "^18.2.0"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-commands",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-session"
+      ],
+      "platform": "web"
+    }
+  }
+}

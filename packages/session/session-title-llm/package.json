@@ -1,0 +1,42 @@
+{
+  "name": "@tbm-insight/session-title-llm",
+  "description": "Shared LLM generation policy for TBM Insight session-title providers",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*"
+  }
+}

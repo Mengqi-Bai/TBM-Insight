@@ -1,0 +1,10 @@
+- insert:
+    - id: cua-provider-registry
+      name: '@tbm-insight/computer-use'
+    - id: cua
+      name: '@tbm-insight/experimental-cua-macos'
+      disabled: !!js process.platform !== 'darwin'
+      config:
+        agentPreset: ptc
+    - id: ui-cua
+      name: '@tbm-insight/cua'

@@ -1,0 +1,20 @@
+- insert:
+    - id: deepseek-fetch-fixture
+      name: './deepseek-fetch-fixture.mjs'
+
+- id: web
+  name: '@tbm-insight/web'
+  config:
+    searchProvider: deepseek-search-api
+    fetchProvider: deepseek-fetch-api
+
+- id: web-deepseek-api
+  name: '@tbm-insight/web-deepseek-api'
+  config:
+    fetchApiKeyEnv: TBM_ENGINE_SNAPSHOT_FETCH_KEY
+    fetchBaseURL: http://127.0.0.1:43118/api/v1/tools
+
+- id: tool-web
+  name: '@tbm-insight/tool-web'
+  config:
+    search: false

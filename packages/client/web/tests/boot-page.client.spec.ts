@@ -1,0 +1,79 @@
+// @vitest-environment jsdom
+import { afterEach, describe, expect, it } from 'vitest'
+import { BootPage } from '../src/boot-page.ts'
+
+afterEach(() => { document.body.innerHTML = '' })
+
+function mount() {
+  const el = document.createElement('div')
+  document.body.append(el)
+  return { el, page: new BootPage(el) }
+}
+
+describe('BootPage', () => {
+  it('draws the loading skeleton before any plugin state arrives', () => {
+    const { el } = mount()
+    expect(el.firstElementChild?.getAttribute('data-tbm-boot')).toBe('')
+    expect(el.textContent).toContain('TBM Insight')
+    expect(el.textContent).toContain('Loading plugins…')
+  })
+
+  it('replaces the indented preboot markup with one hydration root and preserves its mark', () => {
+    const el = document.createElement('div')
+    const preboot = document.createElement('div')
+    preboot.dataset.tbmPreboot = ''
+    const mark = document.createElement('span')
+    mark.dataset.tbmBootMark = ''
+    preboot.append(mark)
+    el.append('\n      ', preboot, '\n    ')
+
+    const page = new BootPage(el)
+    expect(el.querySelector('[data-tbm-preboot]')).toBeNull()
+    expect(el.childNodes).toHaveLength(1)
+    expect(el.firstChild).toBe(el.querySelector('[data-tbm-boot]'))
+    expect(el.querySelector('[data-tbm-boot] [data-tbm-boot-mark]')).toBe(mark)
+    page.dispose()
+    expect(el.childNodes).toHaveLength(0)
+  })
+
+  it('keeps loading while entries are active or loading', () => {
+    const { el, page } = mount()
+    page.setTotal(2)
+    const spinner = el.querySelector<HTMLElement>('[data-tbm-boot-spinner]')
+    expect(spinner?.style.getPropertyValue('--tbm-boot-arc')).toBe('72deg')
+    page.setState('a', 'active')
+    expect(spinner?.style.getPropertyValue('--tbm-boot-arc')).toBe('180deg')
+    page.setState('b', 'loading')
+    expect(el.querySelector('[data-tbm-boot-spinner]')).toBe(spinner)
+    page.setState('b', 'active')
+    expect(spinner?.style.getPropertyValue('--tbm-boot-arc')).toBe('288deg')
+    expect(el.textContent).toContain('Loading plugins…')
+    expect(el.textContent).not.toContain('Failed to load plugins')
+  })
+
+  it('lists failed entries', () => {
+    const { el, page } = mount()
+    page.setState('@tbm-insight/client-ui-layout', 'failed')
+    page.setState('ok', 'active')
+    page.setState('@tbm-insight/client-ui-tool', 'failed')
+    expect(el.textContent).toContain('@tbm-insight/client-ui-layout')
+    expect(el.textContent).toContain('@tbm-insight/client-ui-tool')
+    expect(el.textContent).not.toContain('ok')
+    expect(el.textContent).not.toContain('Loading plugins…')
+  })
+
+  it('shows the complete sweep report', () => {
+    const { el, page } = mount()
+    const report = 'web boot: 1 entry did not activate\nx: pending (waiting for service: y)'
+    page.fail(report)
+    page.setState('a', 'active')
+    expect(el.textContent).toContain(report)
+    expect(el.textContent).not.toContain('Loading plugins…')
+  })
+
+  it('detaches on disposal', () => {
+    const { el, page } = mount()
+    page.dispose()
+    expect(el.childNodes).toHaveLength(0)
+  })
+})

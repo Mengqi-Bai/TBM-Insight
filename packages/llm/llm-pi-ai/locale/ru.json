@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "адаптация модели пи-ай",
+    "description": "Обеспечение адаптации модели DeepSeek через pi-ai для TBM Insight в качестве проверенной реализации tbm-llm-deepseek."
+  }
+}

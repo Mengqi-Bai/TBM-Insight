@@ -1,0 +1,61 @@
+{
+  "name": "@tbm-insight/app-boot",
+  "description": "Shared boot glue for the app bins: .env loading, fail-loud Loader guards, snapshot-aware config resolution, and the Loader boot sequence",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./worker/profile-resolution-bootstrap": {
+      "types": "./lib/types/profile-resolution/worker-bootstrap.d.ts",
+      "default": "./lib/worker/profile-resolution-bootstrap.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/worker/profile-resolution-bootstrap.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/atomic-write": "workspace:*",
+    "@tbm-insight/official-bundles": "workspace:*",
+    "@tbm-insight/package-manifest": "workspace:*",
+    "@eslint-community/regexpp": "^4.12.2",
+    "ajv": "^8.20.0",
+    "js-yaml": "^4.3.2",
+    "node-addon-require-builtin": "^0.1.9",
+    "resolve.exports": "^2.0.3",
+    "semver": "^7.8.5"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis-plugin-group": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/launch-environment": "workspace:*",
+    "@tbm-insight/home-paths": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "@tbm-insight/cordis-plugin-group": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/cordis-plugin-timer": "workspace:~",
+    "@tbm-insight/launch-environment": "workspace:*",
+    "@tbm-insight/home-paths": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@types/js-yaml": "^4.0.9",
+    "@types/semver": "^7.8.0",
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

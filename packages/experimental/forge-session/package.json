@@ -1,0 +1,83 @@
+{
+  "name": "@tbm-insight/experimental-forge-session",
+  "description": "Binds change requests to the Session that created, pushed, or tracked them",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "shell-quote": "^1.12.0",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/experimental-forge": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/shell": "workspace:*",
+    "@tbm-insight/shell-env": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/bash-local": "workspace:*",
+    "@tbm-insight/experimental-forge": "workspace:*",
+    "@tbm-insight/experimental-forge-github": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/shell-env": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tool-bash": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*",
+    "@tbm-insight/shell": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/shell": {
+      "optional": true
+    },
+    "@tbm-insight/shell-env": {
+      "optional": true
+    },
+    "@tbm-insight/tools": {
+      "optional": true
+    },
+    "@tbm-insight/sandbox-policy": {
+      "optional": true
+    }
+  }
+}

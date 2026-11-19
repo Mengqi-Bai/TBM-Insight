@@ -1,0 +1,41 @@
+{
+  "time_comparison": {"width_inches": 10, "left": 0.13, "right": 0.85},
+  "dpi": 180,
+  "fonts": ["Times New Roman", "SimSun", "Liberation Serif", "Noto Serif CJK SC", "Source Han Serif SC", "DejaVu Serif"],
+  "title_size": 13,
+  "label_size": 11,
+  "tick_size": 10,
+  "legend_size": 10,
+  "trend_legend_headroom": 0.13,
+  "line_width": 1.4,
+  "frame_width": 0.85,
+  "frame_color": "#000000",
+  "date_format": "%Y-%m-%d",
+  "clock_format": "%H:%M:%S",
+  "unknown_unit": "原始值（单位待确认）",
+  "colors": {
+    "measured": "#215B83",
+    "estimated": "#625184",
+    "warning": "#A86113",
+    "alarm": "#A32F35",
+    "excavating": "#287766",
+    "stopped": "#695078",
+    "other": "#66778A",
+    "undetermined": "#A1A5A9",
+    "repeated": "#8A4C30"
+  },
+  "line_styles": {"measured": "-", "estimated": "-.", "warning": "--", "alarm": ":"},
+  "dash_patterns": {"measured": "", "estimated": "7 3 2 3", "warning": "6 4", "alarm": "2 3"},
+  "labels": {
+    "measured": "实测值",
+    "estimated": "估算值",
+    "warning": "达到预警设定",
+    "alarm": "达到报警设定",
+    "excavating": "掘进",
+    "stopped": "估算停机",
+    "other": "其他运行",
+    "undetermined": "未判定"
+  },
+  "cutter_reason_tones": {"正常磨损": "measured", "弦磨": "repeated", "未填写": "undetermined"},
+  "metric_labels": {"total_thrust": "总推进力", "cutterhead_speed": "刀盘转速", "cutterhead_torque": "刀盘扭矩"}
+}

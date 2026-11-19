@@ -1,0 +1,13 @@
+- insert:
+    - id: speech-to-text
+      name: '@tbm-insight/experimental-speech-to-text'
+      config:
+        defaultProvider: sensevoice-local
+    - id: speech-to-text-sensevoice
+      name: '@tbm-insight/experimental-speech-to-text-sensevoice'
+      config:
+        dataRoot: !!js tbmHomePath('speech-to-text', 'sensevoice')
+    - id: api-speech-to-text
+      name: '@tbm-insight/experimental-api-speech-to-text'
+    - id: ui-voice-input
+      name: '@tbm-insight/experimental-client-ui-voice-input'

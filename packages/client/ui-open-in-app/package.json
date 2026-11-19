@@ -1,0 +1,89 @@
+{
+  "name": "@tbm-insight/client-ui-open-in-app",
+  "description": "Web \"Open In...\" controls: the Session-header split button opening the workspace directory in an installed application, and the document preview's default-application controls for one file",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-gateway",
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-shortcuts",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-session",
+        "@tbm-insight/client-ui-sidebar-documentpreview",
+        "@tbm-insight/client-ui-context-menu",
+        "@tbm-insight/client-ui-sidebar-right",
+        "@tbm-insight/api-workspace-files",
+        "@tbm-insight/client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-documentpreview": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-files": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/host-open-in-app": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "react": "^18.2.0",
+    "@tbm-insight/client-ui-deliverables": "workspace:*",
+    "@tbm-insight/native-command": "workspace:*",
+    "@tbm-insight/client-shortcuts": "workspace:*",
+    "@tbm-insight/client-ui-context-menu": "workspace:*",
+    "@tbm-insight/client-ui-file-actions": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-right": "workspace:*",
+    "@tbm-insight/api-workspace-files": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-browser": "workspace:*",
+    "@tbm-insight/client-ui-workspace": "workspace:*"
+  }
+}

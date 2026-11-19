@@ -1,0 +1,87 @@
+{
+  "name": "@tbm-insight/headless",
+  "description": "The tbm one-shot bundle: a direct core Agent/Session runner over tbm-base with no Host, HTTP, or browser layer",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./startup": {
+      "types": "./lib/types/startup.d.ts",
+      "default": "./lib/startup.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/startup.js",
+    "cordis.patch.yml",
+    "lib/json-stream-*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "tbm": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/cmdline": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "commander": "^15.0.0"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/permission-presets": {
+      "optional": true
+    },
+    "@tbm-insight/sandbox-policy": {
+      "optional": true
+    },
+    "@tbm-insight/subagent": {
+      "optional": true
+    }
+  }
+}

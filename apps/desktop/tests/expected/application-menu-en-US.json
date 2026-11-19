@@ -1,0 +1,44 @@
+[
+  {
+    "label": "About TBM Insight",
+    "role": "about"
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "label": "Check for Updates…"
+  },
+  {
+    "label": "Manage tbm Command…"
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "role": "toggleDevTools",
+    "label": "Developer tools"
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "role": "hide",
+    "label": "Hide TBM Insight"
+  },
+  {
+    "role": "hideOthers",
+    "label": "Hide Others"
+  },
+  {
+    "role": "unhide",
+    "label": "Show All"
+  },
+  {
+    "type": "separator"
+  },
+  {
+    "role": "quit",
+    "label": "Quit TBM Insight"
+  }
+]

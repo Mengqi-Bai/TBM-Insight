@@ -1,0 +1,21 @@
+- insert:
+    - id: worktree
+      name: '@tbm-insight/experimental-worktree'
+    - id: tool-worktree
+      name: '@tbm-insight/experimental-tool-worktree'
+    - id: forge
+      name: '@tbm-insight/experimental-forge'
+    - id: forge-github
+      name: '@tbm-insight/experimental-forge-github'
+    - id: forge-session
+      name: '@tbm-insight/experimental-forge-session'
+    - id: optional-forge-panel
+      name: cordis:group
+      group: true
+      isolate:
+        worktrees: true
+      config:
+        - id: forge-worktree
+          name: '@tbm-insight/experimental-worktree'
+        - id: forge-panel
+          name: '@tbm-insight/experimental-client-ui-forge'

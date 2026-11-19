@@ -1,0 +1,65 @@
+{
+  "name": "@tbm-insight/workspace-changes",
+  "description": "Per-turn workspace file changes recorded from git working-tree snapshots and whole-file captures, with per-file comparisons, for the TBM Insight",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "license": "MIT",
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "diff": "^9.0.0"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/fs": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-fs": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tool-str-replace-editor": "workspace:*",
+    "@tbm-insight/fs-observation-policy": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*"
+  }
+}

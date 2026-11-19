@@ -1,0 +1,54 @@
+{
+  "name": "@tbm-insight/session",
+  "description": "Event-sourced session store for the TBM Insight",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./fork": {
+      "types": "./lib/types/fork.d.ts",
+      "default": "./lib/types/fork.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./surface": {
+      "types": "./lib/types/surface.d.ts",
+      "default": "./lib/types/surface.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/typert-registry": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*"
+  }
+}

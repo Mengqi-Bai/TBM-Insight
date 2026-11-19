@@ -1,0 +1,86 @@
+{
+  "name": "@tbm-insight/client-ui-schedule",
+  "description": "Host task management page and Session reminder catalog",
+  "version": "0.2.2-alpha.3",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/api-workspace-controller",
+        "@tbm-insight/client-connection",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-sidebar",
+        "@tbm-insight/client-ui-sidebar-right",
+        "@tbm-insight/client-ui-tool",
+        "@tbm-insight/client-ui-workspace",
+        "@tbm-insight/client-ui-primitives"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-sidebar": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-right": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-ui-tool": "workspace:*",
+    "@tbm-insight/client-ui-workspace": "workspace:*",
+    "@tbm-insight/schedule": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/util-time": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@testing-library/react": "^16.3.3",
+    "clsx": "^2.1.1",
+    "@tbm-insight/cordis": "workspace:~",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

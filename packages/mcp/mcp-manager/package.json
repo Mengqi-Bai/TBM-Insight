@@ -1,0 +1,72 @@
+{
+  "name": "@tbm-insight/mcp-manager",
+  "description": "MCP server manager: a settings-driven fleet of mcp-client instances with runtime status, restart, and probe",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/mcp-client": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.2.0",
+    "@tbm-insight/credentials": "workspace:*",
+    "@tbm-insight/mcp-client": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/app-boot": "workspace:*",
+    "@tbm-insight/config-editor": "workspace:*",
+    "@tbm-insight/hmr": "workspace:*",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/cordis-plugin-timer": "workspace:~",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  }
+}

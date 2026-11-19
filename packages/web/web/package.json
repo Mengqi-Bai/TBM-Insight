@@ -1,0 +1,56 @@
+{
+  "name": "@tbm-insight/web",
+  "description": "Abstract web access capability seam (ctx.web) for the TBM Insight — search/fetch provider registry, registration-order-independent selection, request/result vocabulary, and the WebError taxonomy",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/package-manifest": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "name": "@tbm-insight/experimental-claude-code-mods",
+  "description": "Experimental bridge: load Claude Code mods (hooks modules) and run their hook chains on TBM Insight extension points",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./testing": {
+      "types": "./lib/types/testing.d.ts",
+      "default": "./lib/types/testing.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./examples/*": "./examples/*",
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/util-crypto": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/user-questions": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/storage": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*",
+    "@tbm-insight/storage-json": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/user-questions": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*"
+  }
+}

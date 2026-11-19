@@ -1,0 +1,8 @@
+{
+  "embedding": {
+    "provider": "concept_tfidf"
+  },
+  "reranker": {
+    "provider": "rules"
+  }
+}

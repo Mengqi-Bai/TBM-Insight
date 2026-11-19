@@ -1,0 +1,65 @@
+{
+  "name": "@tbm-insight/command-feedback",
+  "description": "Log-only session feedback: the record event, the sessionFeedback Host Remote, and the human-facing slash command",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/anonymous-user-id": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/anonymous-user-id": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  }
+}

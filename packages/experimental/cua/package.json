@@ -1,0 +1,156 @@
+{
+  "name": "@tbm-insight/cua",
+  "description": "Shared Computer Use application objects, authorization, and logged tool execution",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json",
+    "./api": {
+      "types": "./lib/types/api.d.ts",
+      "default": "./lib/api.js"
+    },
+    "./bridge": {
+      "types": "./lib/types/bridge.d.ts",
+      "default": "./lib/bridge.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./types": {
+      "types": "./lib/types/remote-types.d.ts",
+      "default": "./lib/remote-types.js"
+    },
+    "./native-client": {
+      "types": "./lib/types/native-client.d.ts",
+      "default": "./lib/native-client.js"
+    },
+    "./protocol": {
+      "types": "./lib/types/protocol.d.ts",
+      "default": "./lib/protocol.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/remote-types.js",
+    "lib/api.js",
+    "lib/bridge.js",
+    "lib/native-client.js",
+    "lib/protocol.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/user-questions": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/ptc-runtime-node": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "^4.4.3",
+    "@tbm-insight/atomic-write": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/computer-use": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/working-directory": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/attachment-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/llm-deepseek": "workspace:*",
+    "@tbm-insight/ptc-runtime-node": "workspace:*",
+    "@tbm-insight/sandbox-local": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "sharp": "^0.35.3",
+    "@tbm-insight/ptc-runtime": "workspace:*",
+    "@tbm-insight/user-questions": "workspace:*",
+    "@tbm-insight/app-boot": "workspace:*",
+    "@tbm-insight/config-editor": "workspace:*",
+    "@tbm-insight/hmr": "workspace:*",
+    "@tbm-insight/cordis-plugin-timer": "workspace:~",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-ui-plugin-manager": "workspace:*",
+    "@tbm-insight/client-ui-settings": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@testing-library/react": "^16.1.0",
+    "@tbm-insight/loader-smoke": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/storage": "workspace:*",
+    "@tbm-insight/storage-json": "workspace:*",
+    "@tbm-insight/client-ui-user-questions": "workspace:*",
+    "@tbm-insight/client-ui-approval": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-plugin-manager",
+        "@tbm-insight/client-ui-settings",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-user-questions",
+        "@tbm-insight/client-ui-approval",
+        "@tbm-insight/client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  }
+}

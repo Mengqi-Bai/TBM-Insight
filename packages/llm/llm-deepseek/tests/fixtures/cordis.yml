@@ -1,0 +1,25 @@
+- name: '@tbm-insight/llm'
+- name: '@tbm-insight/session'
+- name: '@tbm-insight/session-projection'
+- name: '@tbm-insight/system-prompt'
+- name: '@tbm-insight/tools'
+- name: '@tbm-insight/tool-executor-native'
+- name: '@tbm-insight/agent'
+- name: '@tbm-insight/agent-loop'
+  config:
+    agents: []
+- name: '@tbm-insight/credentials-local'
+  config:
+    path: {{credentials}}
+    watch: false
+- name: '@tbm-insight/llm-deepseek-api-key'
+  config:
+    apiKeyEnv: DEEPSEEK_API_KEY
+    baseURL: {{endpoint}}
+    thinking: enabled
+    reasoningEffort: high
+    maxTokens: 256000
+    streamIdleTimeoutMs: 300000
+- name: '@tbm-insight/llm-deepseek-account'
+  config:
+    baseURL: {{endpoint}}

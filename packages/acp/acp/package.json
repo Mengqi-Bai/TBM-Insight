@@ -1,0 +1,65 @@
+{
+  "name": "@tbm-insight/acp",
+  "description": "Automation-only Agent Client Protocol server for driving TBM Insight agents over JSON-RPC stdio",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@agentclientprotocol/sdk": "1.4.0",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/mcp-client": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/token-meter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/mcp-client": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*"
+  }
+}

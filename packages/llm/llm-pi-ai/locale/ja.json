@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "pi-ai モデルアダプター",
+    "description": "pi-ai を通じて TBM Insight に DeepSeek モデルを接続する、tbm-llm-deepseek の設計検証用実装です。"
+  }
+}

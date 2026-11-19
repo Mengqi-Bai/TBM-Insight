@@ -1,0 +1,43 @@
+{
+  "name": "@tbm-insight/experimental-forge-github",
+  "description": "GitHub provider for the experimental forge registry, read through the GitHub CLI on the host",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "@tbm-insight/timeout": "workspace:*",
+    "execa": "^10.0.1",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/experimental-forge": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/experimental-forge": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*"
+  }
+}

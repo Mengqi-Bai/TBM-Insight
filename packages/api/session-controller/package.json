@@ -1,0 +1,168 @@
+{
+  "name": "@tbm-insight/api-session-controller",
+  "description": "Session Remote commands, cold reads, and live control transport",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./remote-events": {
+      "types": "./lib/types/remote-events.d.ts",
+      "default": "./lib/types/remote-events.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "external": [
+        "@tbm-insight/api-gateway/client"
+      ],
+      "inject": [
+        "@tbm-insight/api-gateway",
+        "@tbm-insight/client-file-upload"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/deque": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "mime-types": "^3.0.2",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-file-upload": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/credentials": "workspace:*",
+    "@tbm-insight/file-reference": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/native-command": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-projection-cache": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/skill": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/typert-registry": "workspace:*",
+    "@tbm-insight/util-time": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/session-persistence": {
+      "optional": true
+    },
+    "@tbm-insight/session-projection-cache": {
+      "optional": true
+    },
+    "@tbm-insight/settings": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/attachment-local": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-file-upload": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/credentials": "workspace:*",
+    "@tbm-insight/file-reference": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/native-command": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/remote-mock": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-projection-cache": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/skill": "workspace:*",
+    "@tbm-insight/storage": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*",
+    "@tbm-insight/storage-json": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/typert-registry": "workspace:*",
+    "@tbm-insight/util-crypto": "workspace:*",
+    "@tbm-insight/util-time": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@types/mime-types": "^3.0.1",
+    "@tbm-insight/working-directory": "workspace:*"
+  }
+}

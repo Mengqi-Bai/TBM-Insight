@@ -1,0 +1,10 @@
+- insert:
+    - id: experimental-inspector
+      name: '@tbm-insight/experimental-inspector'
+      disabled: false
+      config:
+        captureFetch: true
+    - id: session-inspector
+      name: '@tbm-insight/experimental-session-inspector'
+    - id: client-ui-stats
+      name: '@tbm-insight/experimental-client-ui-stats'

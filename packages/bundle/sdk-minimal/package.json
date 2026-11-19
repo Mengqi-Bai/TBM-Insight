@@ -1,0 +1,75 @@
+{
+  "name": "@tbm-insight/sdk-minimal",
+  "description": "The standalone minimal SDK profile bundle: JSON-RPC, one DeepSeek adapter, persistent shell, and JSONL sessions",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "tbm": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@tbm-insight/cordis-plugin-timer": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/attachment-local": "workspace:*",
+    "@tbm-insight/compaction-basic": "workspace:*",
+    "@tbm-insight/compaction-image-offload": "workspace:*",
+    "@tbm-insight/deepseek-llm-api-extensions": "workspace:*",
+    "@tbm-insight/jobs-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/llm-deepseek-api-key": "workspace:*",
+    "@tbm-insight/llm-retry": "workspace:*",
+    "@tbm-insight/mcp-resources": "workspace:*",
+    "@tbm-insight/plugin-package-inventory-deepseek": "workspace:*",
+    "@tbm-insight/sandbox-local": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/sdk-app": "workspace:*",
+    "@tbm-insight/sdk-jsonrpc-server": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-checkpoint-policy": "workspace:*",
+    "@tbm-insight/session-log-deepseek": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/terminal": "workspace:*",
+    "@tbm-insight/terminal-bash": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/tool-bash-persistent": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-fs": "workspace:*",
+    "@tbm-insight/tool-pwsh-persistent": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*",
+    "@tbm-insight/tool-working-directory": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,9 @@
+- insert:
+    - id: cua-provider-registry
+      name: '../../../computer-use/computer-use/src/index.ts'
+    - id: cua
+      name: '../src/index.ts'
+      config:
+        agentPreset: false
+        # TBM_ENGINE_CUA_HELPER must name TBM_ENGINE Computer Use.app/Contents/MacOS/tbm-cua-native.
+        helperPath: !!js process.env.TBM_ENGINE_CUA_HELPER

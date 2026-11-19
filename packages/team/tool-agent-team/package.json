@@ -1,0 +1,59 @@
+{
+  "name": "@tbm-insight/tool-agent-team",
+  "description": "Scoped model-facing Agent Teams tools over ctx.agentTeams",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/agent-team": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/subagent-fork-in-process": "workspace:*",
+    "@tbm-insight/subagent-spawn-in-process": "workspace:*",
+    "@tbm-insight/tool-subagent-control": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/agent-team": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/llm-deepseek": "workspace:*"
+  }
+}

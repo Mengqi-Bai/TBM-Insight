@@ -1,0 +1,51 @@
+{
+  "name": "@tbm-insight/workspace",
+  "description": "Workspace entity registry (ctx.workspaceRegistry): durable workspace records with validated session attachment over the domain data form for the TBM Insight",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/storage": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/storage": "workspace:*",
+    "@tbm-insight/storage-domain": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*"
+  }
+}

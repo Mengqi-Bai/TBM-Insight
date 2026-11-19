@@ -1,0 +1,44 @@
+{
+  "name": "@tbm-insight/desktop-host",
+  "description": "Private Node-mode host process for the Electron desktop application",
+  "version": "0.2.2-alpha.3",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib/index.js",
+    "lib/cli.js"
+  ],
+  "dependencies": {
+    "koffi": "3.1.1",
+    "@deepseek-ai/libreoffice-kit": "^0.1.5",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cli": "workspace:*",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/app-boot": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/host-webserver": "workspace:*",
+    "@tbm-insight/home-paths": "workspace:*",
+    "@tbm-insight/jobs": "workspace:*",
+    "@tbm-insight/schedule": "workspace:*",
+    "@tbm-insight/tool-workspace-dependencies": "workspace:*",
+    "@tbm-insight/skill-office": "workspace:*",
+    "@tbm-insight/deepseek-account": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/plugin-manager": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/skill": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*"
+  }
+}

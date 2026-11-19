@@ -1,0 +1,4 @@
+- id: sandbox
+  name: '@tbm-insight/sandbox-local'
+- id: skills
+  name: '@tbm-insight/skill'

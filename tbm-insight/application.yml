@@ -1,0 +1,93 @@
+- id: system-prompt
+  config:
+    personaPrefix: 你是 TBM Insight，服务于 TBM 施工现场的工程分析助手。
+
+- id: workspace-controller
+  config:
+    documentsDirectory: !!js process.getBuiltinModule('node:path').join(process.env.TBM_INSIGHT_HOME || process.cwd(), 'workspaces')
+
+- id: ui-settings-models
+  config:
+    credentialOnboarding: false
+
+- id: ui-settings-account
+  disabled: true
+- id: account-controller
+  disabled: true
+- id: deepseek-account
+  disabled: true
+- id: llm-deepseek-account
+  disabled: true
+- id: ui-message-feedback
+  disabled: true
+- id: message-feedback
+  disabled: true
+- id: command-feedback
+  disabled: true
+- id: session-telemetry-otel
+  disabled: true
+
+- insert:
+    - id: tbm-insight-skills
+      name: '@tbm-insight/skill-filesystem'
+      config:
+        providerName: tbm-figure-filesystem
+        includeDefaultRoots: false
+        customSkillDirs:
+          - !!js process.getBuiltinModule('node:path').join(process.cwd(), 'tbm-insight', 'skills')
+
+    - id: tbm-insight-guidance
+      name: './guidance.mjs'
+
+    - id: tbm-insight-research
+      name: './research/research-api.ts'
+      config:
+        python: !!js process.env.TBM_INSIGHT_PYTHON || 'python'
+        dataDir: !!js process.getBuiltinModule('node:path').join(process.env.TBM_INSIGHT_HOME || process.cwd(), 'unset-plc')
+        projectsDir: !!js process.env.TBM_INSIGHT_RESEARCH_PROJECTS || process.getBuiltinModule('node:path').join(process.cwd(), 'tbm-insight', 'research', 'projects')
+
+    - id: tbm-insight-panel-api
+      name: './panel-api.ts'
+      config:
+        python: !!js process.env.TBM_INSIGHT_PYTHON || 'python'
+        dataDir: ''
+        cutterSource: ''
+        timeoutMs: 180000
+        metadataTimeoutMs: 90000
+        cacheMs: 60000
+        maxConcurrent: 2
+        maxQueued: 8
+
+    - id: tbm-insight-knowledge-api
+      name: './knowledge-api.ts'
+
+    - id: tbm-insight-mcp
+      name: '@tbm-insight/mcp-client'
+      config:
+        serverName: tbm
+        transport: stdio
+        command: !!js process.env.TBM_INSIGHT_PYTHON || 'python'
+        cwd: !!js process.getBuiltinModule('node:path').join(process.cwd(), 'tbm-insight')
+        args:
+          - '-X'
+          - utf8
+          - tools/server.py
+          - '--output-dir'
+          - !!js process.getBuiltinModule('node:path').join(process.env.TBM_INSIGHT_HOME || process.cwd(), 'outputs')
+        failOnStartupError: true
+
+    - id: tbm-insight-evidence-mcp
+      name: '@tbm-insight/mcp-client'
+      config:
+        serverName: tbm_evidence
+        transport: stdio
+        command: !!js process.env.TBM_INSIGHT_PYTHON || 'python'
+        cwd: !!js process.getBuiltinModule('node:path').join(process.cwd(), 'tbm-insight')
+        args:
+          - '-B'
+          - '-X'
+          - utf8
+          - tools/tbm_evidence_server.py
+          - '--root'
+          - !!js process.getBuiltinModule('node:path').join(process.cwd(), 'tbm-insight', 'knowledge')
+        failOnStartupError: true

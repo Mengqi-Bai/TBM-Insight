@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "TBM_ENGINE habilidade de distintivo",
+    "description": "Permita que os agentes adicionem um selo “powered by tbm” a documentos, pull requests e outros resultados.",
+    "detail": "docs/DETAIL.md"
+  }
+}

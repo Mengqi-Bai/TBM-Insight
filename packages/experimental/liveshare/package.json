@@ -1,0 +1,164 @@
+{
+  "name": "@tbm-insight/experimental-liveshare",
+  "description": "Opt-in LiveShare host bundle: share a Session through a separate Relay at the view or bounded-write tier, with forking and attachment uploads as independent switches",
+  "version": "0.2.2-alpha.3",
+  "icon": "./icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./types": {
+      "types": "./lib/types/share-api-types.d.ts"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "lib/owner-gateway/cli.js",
+    "lib/retry-backoff-*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/atomic-write": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/experimental-liveshare-protocol": "workspace:*",
+    "@tbm-insight/http-proxy": "workspace:*",
+    "@tbm-insight/official-bundles": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "undici": "8.11.2",
+    "ws": "^8.18.3",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/scope": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-settings-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/api-workspace-files": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-file-upload": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-modules": "workspace:*",
+    "@tbm-insight/client-resources": "workspace:*",
+    "@tbm-insight/client-shortcuts": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-agent-preset": "workspace:*",
+    "@tbm-insight/client-ui-approval": "workspace:*",
+    "@tbm-insight/client-ui-attachment": "workspace:*",
+    "@tbm-insight/client-ui-brand-official": "workspace:*",
+    "@tbm-insight/client-ui-chat": "workspace:*",
+    "@tbm-insight/client-ui-commands": "workspace:*",
+    "@tbm-insight/client-ui-context-menu": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-deliverables": "workspace:*",
+    "@tbm-insight/client-ui-input-trigger": "workspace:*",
+    "@tbm-insight/client-ui-jobs": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-plan": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-reference": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-settings": "workspace:*",
+    "@tbm-insight/client-ui-sidebar": "workspace:*",
+    "@tbm-insight/client-ui-sidebar-right": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-ui-subagent": "workspace:*",
+    "@tbm-insight/client-ui-theme": "workspace:*",
+    "@tbm-insight/client-ui-tool": "workspace:*",
+    "@tbm-insight/client-ui-trajectory": "workspace:*",
+    "@tbm-insight/client-ui-user-questions": "workspace:*",
+    "@tbm-insight/client-ui-workflow-run": "workspace:*",
+    "@tbm-insight/client-ui-workspace": "workspace:*",
+    "@tbm-insight/client-web": "workspace:*",
+    "@tbm-insight/cua": "workspace:*",
+    "@tbm-insight/experimental-api-speech-to-text": "workspace:*",
+    "@tbm-insight/experimental-claude-code-mods": "workspace:*",
+    "@tbm-insight/experimental-client-ui-cot-translation": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/fs-observation-policy": "workspace:*",
+    "@tbm-insight/fs-sandbox": "workspace:*",
+    "@tbm-insight/host-webserver": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-fs": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-registry": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@types/ws": "^8.18.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "tbm": {
+    "bundle": {
+      "patch": "./cordis.patch.yml",
+      "listedByDefault": false
+    },
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remote-access",
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-primitives",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-session"
+      ],
+      "platform": "web"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,13 @@
+- insert:
+    - id: action-cards
+      name: '@tbm-insight/action-cards'
+    - id: client-ui-action-cards
+      name: '@tbm-insight/client-ui-action-cards'
+    - id: creation-recommendations
+      name: '@tbm-insight/creation-recommendations'
+    - id: client-ui-creation-recommendations
+      name: '@tbm-insight/client-ui-creation-recommendations'
+    - id: plugin-recommendations
+      name: '@tbm-insight/plugin-recommendations'
+    - id: client-ui-plugin-recommendations
+      name: '@tbm-insight/client-ui-plugin-recommendations'

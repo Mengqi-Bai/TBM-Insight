@@ -1,0 +1,5 @@
+- dialog "预览版说明":
+  - heading "预览版说明" [level=2]
+  - paragraph: TBM Insight 是面向 TBM 施工现场的工程分析助手，目前处于预览阶段。
+  - paragraph: 可用自然语言查询引松工程的掘进工况，查看 PLC 参数统计、趋势图和来源日包。
+  - button "继续"

@@ -1,0 +1,128 @@
+{
+  "name": "@tbm-insight/subagent",
+  "description": "Abstract subagent seam (ctx.subagents): named-provider registry for delegating to child agents",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/chunked-list": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*",
+    "@tbm-insight/util-time": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/agent-preset-registry": {
+      "optional": true
+    },
+    "@tbm-insight/permission-presets": {
+      "optional": true
+    },
+    "@tbm-insight/sandbox": {
+      "optional": true
+    },
+    "@tbm-insight/sandbox-policy": {
+      "optional": true
+    },
+    "@tbm-insight/session-persistence": {
+      "optional": true
+    },
+    "@tbm-insight/session-query": {
+      "optional": true
+    },
+    "@tbm-insight/workspace": {
+      "optional": true
+    },
+    "@tbm-insight/user-approval": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session-query": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/user-approval": "workspace:*",
+    "@tbm-insight/util-time": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/fs-sandbox": "workspace:*",
+    "@tbm-insight/tool-fs": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  }
+}

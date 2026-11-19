@@ -1,0 +1,42 @@
+- id: agent-default-model
+  name: '@tbm-insight/agent-default-model'
+  config:
+    provider: deepseek-official
+    model: deepseek-v4-pro
+
+- id: session-persistence-jsonl
+  name: '@tbm-insight/session-persistence-jsonl'
+  config:
+    root: !!js tbmHomePath('sessions')
+    compression: !!js 'process.env.TBM_ENGINE_SNAPSHOT === undefined ? ''zstd'' : ''none'''
+
+- id: agent-instructions
+  name: '@tbm-insight/agent-instructions'
+  config:
+    maxBytes: 65536
+
+- id: tool-executor-native
+  disabled: false
+
+- id: tool-executor-ptc
+  disabled: true
+
+- id: system-prompt
+  name: '@tbm-insight/system-prompt'
+  config:
+    personaPrefix: |
+      You are a coding assistant powered by the {{model}} model.
+
+      Verify your work by running the code or tests. Keep answers brief and factual.
+
+- insert:
+    - id: cordis-host-runner
+      name: '@tbm-insight/cordis-host-runner'
+      config:
+        clientInspectTimeoutMs: 100
+    - id: cordis-inspect-providers
+      name: '@tbm-insight/tool-cordis/host'
+    - id: tool-cordis
+      name: '@tbm-insight/tool-cordis'
+    - id: client-inspect-liveness-fixture
+      name: ./client-fixture.mjs

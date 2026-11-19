@@ -1,0 +1,57 @@
+{
+  "name": "@tbm-insight/tool-ralph",
+  "description": "Model-facing fresh-agent Ralph loop over the workflow and subagent seams",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/workflow": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/subagent-spawn-in-process": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/workflow": "workspace:*",
+    "@tbm-insight/workflow-ptc": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session-projection": "workspace:*"
+  }
+}

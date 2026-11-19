@@ -1,0 +1,65 @@
+{
+  "name": "@tbm-insight/experimental-translator",
+  "description": "Machine translation with reusable Session results",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/credentials": "workspace:*",
+    "@tbm-insight/launch-environment": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/app-boot": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-persistence": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/credentials": "workspace:*",
+    "@tbm-insight/launch-environment": "workspace:*",
+    "@tbm-insight/llm-deepseek": "workspace:*",
+    "@tbm-insight/llm-deepseek-api-key": "workspace:*",
+    "@tbm-insight/llm-deepseek-account": "workspace:*",
+    "@tbm-insight/deepseek-account": "workspace:*",
+    "@tbm-insight/deepseek-llm-api-extensions": "workspace:*",
+    "@tbm-insight/session-log-deepseek": "workspace:*",
+    "@tbm-insight/session-query-sqlite": "workspace:*"
+  }
+}

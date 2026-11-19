@@ -1,0 +1,3 @@
+- name: '@tbm-insight/session'
+- name: '@tbm-insight/session-projection'
+- name: './legacy-plugin.ts'

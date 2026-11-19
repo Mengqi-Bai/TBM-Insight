@@ -1,0 +1,21 @@
+[data-tbm-preboot] {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color-scheme: light dark;
+  background: Canvas;
+  color: CanvasText;
+  font: 500 18px/24px system-ui, sans-serif;
+}
+
+[data-tbm-boot-mark] {
+  display: block;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  background: currentColor;
+  mask: url('/favicon.svg') center / contain no-repeat;
+}

@@ -1,0 +1,78 @@
+{
+  "name": "@tbm-insight/goal",
+  "description": "Event-sourced same-session goal state and lifecycle service for the TBM Insight",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/bash-local": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/loader-smoke": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-checkpoint-policy": "workspace:*",
+    "@tbm-insight/session-persistence-jsonl": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

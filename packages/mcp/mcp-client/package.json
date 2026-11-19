@@ -1,0 +1,80 @@
+{
+  "name": "@tbm-insight/mcp-client",
+  "description": "MCP client bridge: connects to MCP servers and registers their tools on ctx.tools",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/mcp-resources": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/credentials": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~",
+    "@modelcontextprotocol/client": "2.2.0",
+    "@tbm-insight/util-values": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/attachment-local": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@modelcontextprotocol/server-everything": "^2026.8.31",
+    "@modelcontextprotocol/server-filesystem": "^2026.8.31",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/http-proxy": "workspace:*",
+    "@modelcontextprotocol/server": "2.2.0",
+    "@modelcontextprotocol/node": "2.0.0",
+    "zod": "4.4.3",
+    "@tbm-insight/mcp-resources": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/credentials": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@tbm-insight/mcp-resources": {
+      "optional": true
+    },
+    "@tbm-insight/system-prompt": {
+      "optional": true
+    },
+    "@tbm-insight/credentials": {
+      "optional": true
+    }
+  }
+}

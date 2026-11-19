@@ -1,0 +1,52 @@
+{
+  "name": "@tbm-insight/client-modules",
+  "description": "Client module system, dual-face: node half composes the __TBM_ENGINE_BOOT__ entry graph (incremental tbm.client scan, bundle route, index tap, webPlugins service); browser half is the lazy-CJS module table the vendored cordis Loader consumes as its internal seam",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "platform": "web",
+      "inject": [],
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/host-webserver": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/package-manifest": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

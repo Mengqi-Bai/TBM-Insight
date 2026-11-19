@@ -1,0 +1,9 @@
+- insert:
+    - id: subagent-codex
+      name: '@tbm-insight/subagent-codex'
+    - id: tool-subagent-codex
+      name: '@tbm-insight/tool-subagent'
+      config:
+        provider: codex
+        toolName: subagent_codex
+        maxDepth: provider-managed

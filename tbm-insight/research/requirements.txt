@@ -1,0 +1,6 @@
+arxiv==4.1.0
+numpy==2.4.6
+PyYAML==6.0.3
+rich==15.0.0
+wasi-python==0.1.4
+wasmtime==50.0.1

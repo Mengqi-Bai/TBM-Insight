@@ -1,0 +1,59 @@
+{
+  "name": "@tbm-insight/webhook",
+  "description": "Fire-and-forget webhook rule runtime that creates Workspace-backed TBM Insight Sessions",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-default-model": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/permission-presets": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*"
+  }
+}

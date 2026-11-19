@@ -1,0 +1,48 @@
+{
+  "name": "@tbm-insight/experimental-ptc-runtime-python",
+  "description": "CPython subprocess implementation of the TBM Insight PTC execution seam",
+  "version": "0.2.2-alpha.3",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "py/**/*.py",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/ptc-runtime": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/ptc-runtime": "workspace:*",
+    "@tbm-insight/timeout": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/sandbox-local": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/session": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

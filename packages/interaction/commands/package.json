@@ -1,0 +1,75 @@
+{
+  "name": "@tbm-insight/commands",
+  "description": "Plugin-owned human command registry for TBM Insight UIs",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./brand": {
+      "types": "./lib/types/brand.d.ts",
+      "default": "./lib/types/brand.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./builtin": {
+      "types": "./lib/types/builtin.d.ts",
+      "default": "./lib/types/builtin.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/util-crypto": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/scope": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  }
+}

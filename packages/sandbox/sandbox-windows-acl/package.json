@@ -1,0 +1,52 @@
+{
+  "name": "@tbm-insight/sandbox-windows-acl",
+  "description": "Windows ACL write-restriction sandbox backend (restricted-token spawn with capability-SID write allowlist) for the TBM Insight sandbox seam",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./runner": {
+      "types": "./lib/types/runner.d.ts",
+      "default": "./lib/runner.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/runner.js",
+    "lib/types-*.js",
+    "assets",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/skill": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/lazy-require": "workspace:*",
+    "@tbm-insight/win32-process": "workspace:*",
+    "koffi": "3.1.1",
+    "yaml": "^2.4.2"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/pwsh-local": "workspace:*",
+    "@tbm-insight/sandbox-local": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/skill": "workspace:*",
+    "@tbm-insight/subprocess": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*"
+  }
+}

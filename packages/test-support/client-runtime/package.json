@@ -1,0 +1,93 @@
+{
+  "name": "@tbm-insight/client-test-runtime",
+  "description": "Browser test runtimes: a jsdom slot bench with test-owned Session and Workspace doubles, and a whole-client tier that boots the web roster through the production bootClient over an endpoint-named Remote mock",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.3",
+    "js-yaml": "^4.3.2",
+    "vitest": "^4.1.11"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-hmr": "workspace:*",
+    "@tbm-insight/client-modules": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-ui-chat": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-settings": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-web": "workspace:*",
+    "@tbm-insight/remote-mock": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tbm-insight/client-ui-context-menu": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/api-gateway": "workspace:*",
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/base": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-hmr": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-modules": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-ui-chat": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-settings": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-ui-workspace": "workspace:*",
+    "@tbm-insight/client-web": "workspace:*",
+    "@tbm-insight/remote-mock": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/web-app": "workspace:*",
+    "@types/js-yaml": "^4.0.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@tbm-insight/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

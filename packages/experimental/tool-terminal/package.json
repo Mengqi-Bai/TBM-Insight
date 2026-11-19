@@ -1,0 +1,65 @@
+{
+  "name": "@tbm-insight/tool-terminal",
+  "description": "Six model-facing persistent PTY tools with owner isolation and generic background-job integration",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/terminal": "workspace:*",
+    "@tbm-insight/output-retention": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/jobs": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/working-directory": "workspace:*"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-include": "workspace:~",
+    "@tbm-insight/cordis-plugin-loader": "workspace:~",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-loop-testkit": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/terminal": "workspace:*",
+    "@tbm-insight/terminal-bash": "workspace:*",
+    "@tbm-insight/output-retention": "workspace:*",
+    "@tbm-insight/sandbox": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/system-prompt": "workspace:*",
+    "@tbm-insight/jobs": "workspace:*",
+    "@tbm-insight/jobs-local": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-executor-ptc": "workspace:*",
+    "@tbm-insight/tool-jobs": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/working-directory": "workspace:*"
+  }
+}

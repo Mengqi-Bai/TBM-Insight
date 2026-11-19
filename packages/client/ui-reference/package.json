@@ -1,0 +1,74 @@
+{
+  "name": "@tbm-insight/client-ui-reference",
+  "description": "Unified Web @file and @session reference source",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/client-connection",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-input-trigger",
+        "@tbm-insight/client-ui-sidebar-right",
+        "@tbm-insight/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "react": "^18.2.0",
+    "@tbm-insight/client-ui-input-trigger": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/file-reference": "workspace:*",
+    "@tbm-insight/session-reference": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/client-ui-sidebar-right": "workspace:*",
+    "@tbm-insight/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

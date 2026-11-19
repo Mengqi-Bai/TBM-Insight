@@ -1,0 +1,74 @@
+{
+  "name": "@tbm-insight/spill-policy",
+  "description": "Token-budgeted tool-result retention with recoverable text and image paths",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./notice": {
+      "types": "./lib/types/notice.d.ts",
+      "default": "./lib/types/notice.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/output-retention": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/spill": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/ptc-runtime-node": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/output-retention": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/spill": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/tools": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/fs-local": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/sandbox-local": "workspace:*",
+    "@tbm-insight/sandbox-policy": "workspace:*",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/fs": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/mcp-client": "workspace:*",
+    "@tbm-insight/spill-local": "workspace:*",
+    "@tbm-insight/llm-deepseek": "workspace:*",
+    "@tbm-insight/ptc-runtime": "workspace:*",
+    "@tbm-insight/attachment-local": "workspace:*",
+    "@tbm-insight/tool-executor-native": "workspace:*",
+    "@tbm-insight/tool-executor-ptc": "workspace:*",
+    "@tbm-insight/tool-fs": "workspace:*",
+    "sharp": "0.35.5",
+    "@tbm-insight/agent-loop-testkit": "workspace:*"
+  }
+}

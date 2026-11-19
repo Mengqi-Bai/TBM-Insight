@@ -1,0 +1,90 @@
+{
+  "name": "@tbm-insight/client-ui-workspace",
+  "description": "Workspace picker plugin: one WorkspacePicker registered into the sidebar and empty-state workspace slots",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-remote-access",
+        "@tbm-insight/api-remotes",
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/api-workspace-controller",
+        "@tbm-insight/client-connection",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-shortcuts",
+        "@tbm-insight/client-ui-conversation",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-session",
+        "@tbm-insight/client-ui-sidebar",
+        "@tbm-insight/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/api-remote-access": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/agent-preset-registry": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/client-connection": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-conversation": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-sidebar": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/jobs": "workspace:*",
+    "@tbm-insight/schedule": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/subagent": "workspace:*",
+    "@tbm-insight/typert-protocol": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "clsx": "^2.0.0",
+    "react": "^18.2.0",
+    "@tbm-insight/client-shortcuts": "workspace:*",
+    "@tbm-insight/client-product-analytics": "workspace:*",
+    "@tbm-insight/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

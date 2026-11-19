@@ -1,0 +1,76 @@
+{
+  "name": "@tbm-insight/web-frontend",
+  "description": "Web application entry: vite build over the @tbm-insight/client-web shell library; dist/ served by apps/cli's tbm web",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "!dist/preview.html",
+    "!dist/preview"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "watch": "vite build --watch --no-emptyOutDir",
+    "build:preview": "pnpm --filter @tbm-insight/experimental-webworker-runtime exec tsdown && pnpm --filter @tbm-insight/experimental-webworker-packer exec tsdown && vite build && tbm-pack-vfs-image --out dist/preview/vfs-image.tar.gz",
+    "serve:preview": "http-server dist -a 0.0.0.0 -p 4173 -c-1",
+    "render:app-icons": "tsx scripts/render-app-icons.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tbm-insight/cordis-plugin-group": "workspace:~",
+    "@tbm-insight/client-modules": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/llm-mock-server": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-deliverables": "workspace:*",
+    "@tbm-insight/client-ui-dockkit": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/client-web": "workspace:*",
+    "@tbm-insight/cmdline": "workspace:*",
+    "@tbm-insight/pwsh-local": "workspace:*",
+    "@tbm-insight/agent-team": "workspace:*",
+    "@tbm-insight/experimental-webworker-packer": "workspace:*",
+    "@tbm-insight/experimental-webworker-runtime": "workspace:*",
+    "@tbm-insight/remote-mock": "workspace:*",
+    "@tbm-insight/session-projection-cache": "workspace:*",
+    "@tbm-insight/tool-testkit": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@types/node": "^22.20.1",
+    "@types/ws": "8.18.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "http-server": "^14.1.1",
+    "fflate": "^0.8.2",
+    "playwright": "^1.49.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "0.35.5",
+    "typescript": "^6.0.3",
+    "vite": "^6.4.3",
+    "vitest": "^4.1.11",
+    "ws": "8.21.3",
+    "@tbm-insight/client-ui-theme": "workspace:*",
+    "@tbm-insight/launch-environment": "workspace:*",
+    "@tbm-insight/workspace-changes": "workspace:*",
+    "@tbm-insight/subprocess-local": "workspace:*",
+    "@tbm-insight/experimental-auto-review": "workspace:*",
+    "@tbm-insight/experimental-speech-to-text": "workspace:*",
+    "@tbm-insight/experimental-voice-input-bundle": "workspace:*",
+    "@tbm-insight/experimental-cot-translation-bundle": "workspace:*",
+    "@tbm-insight/experimental-worktree": "workspace:*",
+    "@tbm-insight/experimental-plugin-market-bundle": "workspace:*",
+    "@tbm-insight/experimental-forge-bundle": "workspace:*"
+  },
+  "dependencies": {
+    "@tbm-insight/message-quotes": "workspace:*"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "name": "@tbm-insight/client-ui-conversation",
+  "description": "Target-neutral Conversation assembly, shell, composer, queue, and view navigation",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "tbm": {
+    "client": {
+      "inject": [
+        "@tbm-insight/api-session-controller",
+        "@tbm-insight/client-file-upload",
+        "@tbm-insight/client-locale",
+        "@tbm-insight/client-ui-layout",
+        "@tbm-insight/client-ui-renderer",
+        "@tbm-insight/client-ui-session",
+        "@tbm-insight/client-ui-settings",
+        "@tbm-insight/client-ui-workspace",
+        "@tbm-insight/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/api-remotes": "workspace:*",
+    "@tbm-insight/api-session-controller": "workspace:*",
+    "@tbm-insight/api-workspace-controller": "workspace:*",
+    "@tbm-insight/attachment": "workspace:*",
+    "@tbm-insight/brand": "workspace:*",
+    "@tbm-insight/client-locale": "workspace:*",
+    "@tbm-insight/client-file-upload": "workspace:*",
+    "@tbm-insight/client-store": "workspace:*",
+    "@tbm-insight/client-test-runtime": "workspace:*",
+    "@tbm-insight/client-ui-layout": "workspace:*",
+    "@tbm-insight/client-ui-primitives": "workspace:*",
+    "@tbm-insight/client-ui-renderer": "workspace:*",
+    "@tbm-insight/client-ui-session": "workspace:*",
+    "@tbm-insight/client-ui-settings": "workspace:*",
+    "@tbm-insight/client-ui-workspace": "workspace:*",
+    "@tbm-insight/client-ui-slots": "workspace:*",
+    "@tbm-insight/commands": "workspace:*",
+    "@tbm-insight/goal": "workspace:*",
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/llm-retry": "workspace:*",
+    "@tbm-insight/plan-mode": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/token-meter": "workspace:*",
+    "@tbm-insight/tool-todo": "workspace:*",
+    "@tbm-insight/util-crypto": "workspace:*",
+    "@tbm-insight/workspace": "workspace:*",
+    "@tbm-insight/file-reference": "workspace:*",
+    "@tbm-insight/util-workspace-path": "workspace:*",
+    "react": "^18.2.0",
+    "@lexical/headless": "^0.49.0",
+    "react-dom": "^18.2.0",
+    "zod": "4.4.3",
+    "lexical": "^0.49.0",
+    "clsx": "^2.0.0",
+    "@lexical/utils": "^0.49.0",
+    "@lexical/text": "^0.49.0",
+    "@lexical/plain-text": "^0.49.0",
+    "@lexical/history": "^0.49.0",
+    "@tbm-insight/agent": "workspace:*",
+    "@tbm-insight/settings": "workspace:*",
+    "@tbm-insight/client-shortcuts": "workspace:*",
+    "@tbm-insight/client-product-analytics": "workspace:*",
+    "@tbm-insight/message-quotes": "workspace:*",
+    "@tbm-insight/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

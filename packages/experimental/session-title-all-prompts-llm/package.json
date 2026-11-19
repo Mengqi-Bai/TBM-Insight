@@ -1,0 +1,45 @@
+{
+  "name": "@tbm-insight/session-title-all-prompts-llm",
+  "description": "All-user-messages LLM provider plugin for TBM Insight session titles",
+  "version": "0.2.2-alpha.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/session-title-llm": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@tbm-insight/util-values": "workspace:*",
+    "@tbm-insight/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@tbm-insight/llm": "workspace:*",
+    "@tbm-insight/session": "workspace:*",
+    "@tbm-insight/session-title": "workspace:*",
+    "@tbm-insight/session-title-llm": "workspace:*",
+    "@tbm-insight/cordis": "workspace:~",
+    "@tbm-insight/session-projection": "workspace:*",
+    "@tbm-insight/agent-loop": "workspace:*"
+  }
+}

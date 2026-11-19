@@ -1,0 +1,65 @@
+# TypeScript SDK snapshot patch for automatic TBM_ENGINE SDK failure notices.
+
+- id: skill-filesystem
+  name: '@tbm-insight/skill-filesystem'
+  config:
+    includeDefaultRoots: false
+
+- id: llm-deepseek
+  name: '@tbm-insight/llm-deepseek-api-key'
+  config:
+    thinking: enabled
+    reasoningEffort: max
+
+- id: session-persistence-jsonl
+  name: '@tbm-insight/session-persistence-jsonl'
+  config:
+    root: !!js tbmHomePath('sessions')
+    compression: !!js "process.env.TBM_ENGINE_SNAPSHOT === undefined ? 'zstd' : 'none'"
+
+- id: session-log-deepseek
+  name: '@tbm-insight/session-log-deepseek'
+  config:
+    enabled: true
+
+- insert:
+    - id: subagent-tbm-sdk-diagnostic
+      name: '@tbm-insight/subagent-tbm-sdk'
+      config:
+        providerName: tbm-sdk-diagnostic
+        profile: sdk
+        patches:
+          - !!js process.env.TBM_ENGINE_TEST_CHILD_PATCH
+        tbmHome: !!js tbmHomePath('children/first')
+        provider: mock
+        model: mock-echo
+        env:
+          TBM_ENGINE_TELEMETRY_DISABLED: '1'
+          TBM_ENGINE_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-tbm-sdk-diagnostic
+      name: '@tbm-insight/tool-subagent'
+      config:
+        provider: tbm-sdk-diagnostic
+        toolName: subagent_tbm_sdk
+        maxDepth: provider-managed
+    - id: subagent-tbm-sdk-diagnostic-second
+      name: '@tbm-insight/subagent-tbm-sdk'
+      config:
+        providerName: tbm-sdk-diagnostic-second
+        profile: sdk
+        patches:
+          - !!js process.env.TBM_ENGINE_TEST_CHILD_PATCH
+        tbmHome: !!js tbmHomePath('children/second')
+        provider: mock
+        model: mock-echo
+        env:
+          TBM_ENGINE_TELEMETRY_DISABLED: '1'
+          TBM_ENGINE_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-tbm-sdk-diagnostic-second
+      name: '@tbm-insight/tool-subagent'
+      config:
+        provider: tbm-sdk-diagnostic-second
+        toolName: subagent_tbm_sdk_second
+        maxDepth: provider-managed
+    - id: await-external-subagents
+      name: '../../../packages/test-support/session-snapshot/tests/fixtures/subagent-settlement-barrier.ts'
