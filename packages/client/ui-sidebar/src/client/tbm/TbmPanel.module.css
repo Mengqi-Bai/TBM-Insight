@@ -300,13 +300,6 @@
 .documentTitle span { color: var(--tbm-muted); }
 .documentOpen { color: var(--tbm-accent); }
 .library > button { justify-self: start; }
-.sourceSettings { display: grid; gap: 16px; max-width: 740px; padding: 14px; }
-.sourceSettings h2, .sourceSettings p { margin: 0; }
-.sourceSetting { display: flex; gap: 8px; align-items: end; }
-.sourceSetting label { display: grid; flex: 1; gap: 5px; min-width: 0; }
-.sourceSetting label span { font-size: 12px; color: var(--dsw-alias-fg-muted, #5e6570); }
-.sourceSetting input { min-width: 0; width: 100%; min-height: 34px; padding: 6px 8px; border: 1px solid var(--dsw-alias-border, #b8bec7); border-radius: 6px; background: var(--dsw-alias-bg-base, Canvas); color: inherit; }
-.sourceSettings > button { justify-self: start; }
 .quote { white-space: pre-wrap; font-size: 13px; line-height: 1.55; }
 
 @media (max-width: 780px) {

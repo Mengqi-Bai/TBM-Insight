@@ -9,15 +9,21 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
 PRODUCT = ROOT / "tbm-insight"
+KNOWLEDGE = PRODUCT / "knowledge"
+KNOWLEDGE_DIRECTORIES = {"sources", "index", "versions"}
 OMIT_DIRECTORIES = {".git", ".local", ".tbm-dev", ".runtime", ".venv", ".cache", "__pycache__",
                     "projects", "outputs", "sources", "versions", "index", "results"}
 
 
 def product_files():
     for directory, folders, files in os.walk(PRODUCT):
-        folders[:] = [folder for folder in folders if folder not in OMIT_DIRECTORIES]
+        parent = Path(directory)
+        folders[:] = [folder for folder in folders if folder not in OMIT_DIRECTORIES
+                      or (parent == KNOWLEDGE and folder in KNOWLEDGE_DIRECTORIES)]
         for item in files:
-            path = Path(directory, item)
+            if parent == KNOWLEDGE / "index" and item not in {"catalog.json", "evidence.sqlite"}:
+                continue
+            path = parent / item
             location = path.relative_to(PRODUCT)
             if item.startswith("config.local") or item in {"acceptance.json", ".gitignore"}:
                 continue

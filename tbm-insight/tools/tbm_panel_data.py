@@ -30,7 +30,7 @@ import tbm_panel_simulation as simulation
 HISTORICAL_DAY = date(2016, 7, 24)
 ARCHIVE_PATTERN = re.compile(rf"{plc.DEVICE}_([0-9]{{8}})\.zip")
 ARCHIVE_INDEX_VERSION = f"plc-archive-index-v2:{plc.HEADER_SHA256}"
-USER_CONFIRMED_MANIFEST = "58977b2a7449c26800c149c7afba81ed44a0c6215b66201adcd56ff1d8b9c561"
+USER_CONFIRMED_STANDARDS = "82f51a2c673729a195b826babfa5e0e40e198bcb02f8377e1f0ee1ab6b811574"
 ACTIVITY_FIELDS = conditions_index.ACTIVITY_FIELDS
 EVIDENCE_FILTERS = ("standard", "clause", "region", "machine", "domain", "stage", "geology", "as_of")
 PANEL_FIELDS = {
@@ -486,12 +486,15 @@ def cutter_parameters(request, day):
 
 def confirmed_standard_hashes(root):
     try:
-        manifest = (root / "sources" / "source_manifest.json").read_bytes()
-    except OSError:
+        manifest = json.loads((root / "sources" / "source_manifest.json").read_text(encoding="utf-8-sig"))
+        standards = sorted((item["path"], item["sha256"]) for item in manifest["files"]
+                           if item["path"].startswith("standards_ocr/"))
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
         return set()
-    if sha256(manifest).hexdigest() != USER_CONFIRMED_MANIFEST:
+    fingerprint = json.dumps(standards, ensure_ascii=False, separators=(",", ":"))
+    if sha256(fingerprint.encode()).hexdigest() != USER_CONFIRMED_STANDARDS:
         return set()
-    return {item["sha256"] for item in json.loads(manifest)["files"] if item["path"].startswith("standards_ocr/")}
+    return {digest for _, digest in standards}
 
 
 def search_evidence(request, paths):
@@ -509,7 +512,8 @@ def search_evidence(request, paths):
         return {"status": "insufficient_evidence", "standards": [], "cases": [],
                 "evidence_gaps": ["请先在「设置 → 工程数据」配置已入库的规范与案例库。"]}
     settings = evidence.config_at(paths.knowledge_root / "models.json")
-    result = evidence.search_and_save(paths.knowledge_root, query, settings, limit, mode, **filters)
+    result = evidence.search_and_save(paths.knowledge_root, query, settings, limit, mode,
+                                      output_dir=paths.output_dir / "knowledge", **filters)
     confirmed = confirmed_standard_hashes(paths.knowledge_root)
     for item in result["standards"]:
         metadata = item["metadata"]
@@ -600,17 +604,16 @@ def main():
     request = None
     try:
         request = json.load(sys.stdin)
-        if any(paths.output_dir.is_relative_to(source) for source in (
-            paths.data_dir, paths.cutter_source.parent, paths.knowledge_root / "sources"
-        )):
+        source_dirs = [paths.data_dir, paths.knowledge_root / "sources"]
+        if paths.cutter_source.is_file():
+            source_dirs.append(paths.cutter_source.parent)
+        if any(paths.output_dir.is_relative_to(source) for source in source_dirs):
             raise ValueError("输出目录须位于原始资料目录之外")
         if paths.figure_dir is not None:
             if (not isinstance(request, dict) or request.get("panel") != "progress"
                     or request.get("detail") == "day" or request.get("metadata")):
                 raise ValueError("--figure-dir 仅适用于进度周查询")
-            if any(paths.figure_dir.is_relative_to(source) for source in (
-                paths.data_dir, paths.cutter_source.parent, paths.knowledge_root / "sources"
-            )):
+            if any(paths.figure_dir.is_relative_to(source) for source in source_dirs):
                 raise ValueError("图表目录须位于原始资料目录之外")
         result = panel_request(request, paths)
         if paths.figure_dir is not None:

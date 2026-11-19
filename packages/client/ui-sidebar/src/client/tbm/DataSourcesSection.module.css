@@ -1,0 +1,99 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  color: var(--dsw-alias-label-primary);
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.card {
+  padding: 0 14px;
+  border: 0.5px solid var(--dsw-alias-settings-card-stroke);
+  border-radius: var(--dsw-radius-xl);
+  background: var(--dsw-alias-settings-card-fill);
+}
+
+.field {
+  display: grid;
+  gap: 3px;
+  padding: 12px 0;
+}
+
+.field + .field {
+  border-top: 0.5px solid var(--dsw-alias-border-l2);
+}
+
+.label {
+  justify-self: start;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+.description, .error, .saved {
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.description {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.controls, .footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls {
+  margin-top: 5px;
+}
+
+.controls > .path {
+  box-sizing: border-box;
+  flex: 1 1 140px;
+  min-width: 0;
+  height: 36px;
+}
+
+.path:has(input:disabled) {
+  opacity: 0.6;
+}
+
+.pickButton, .saveButton {
+  flex: none;
+  white-space: nowrap;
+}
+
+.error, .saved {
+  flex: 1 1 170px;
+  overflow-wrap: anywhere;
+}
+
+.error {
+  color: var(--dsw-alias-state-error-primary);
+}
+
+.saved {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--dsw-alias-state-success-primary);
+}
+
+.saved > svg {
+  flex: none;
+}
+
+.saveButton {
+  margin-inline-start: auto;
+}

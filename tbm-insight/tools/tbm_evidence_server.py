@@ -6,7 +6,7 @@ import sys
 
 sys.dont_write_bytecode = True
 from tbm_evidence import ROOT, config_at, search_and_save
-from tbm_data_sources import source_path
+from tbm_data_sources import HOME, source_path
 
 TOOL = {
     "name": "search_tbm_evidence",
@@ -39,7 +39,7 @@ def call(arguments, root, settings):
         filters = {key: value for key, value in arguments.items() if key not in ("query", "mode", "limit")}
         if any(not isinstance(value, str) for value in filters.values()):
             raise ValueError("Filters must be strings")
-        result = search_and_save(root, query, settings, count, mode, **filters)
+        result = search_and_save(root, query, settings, count, mode, output_dir=HOME / "outputs" / "knowledge", **filters)
         lines = [result["status"], f"问题路由 {result['route']}"]
         if result.get("suggested_tool"):
             lines.append(f"建议调用工程工具 {result['suggested_tool']}")

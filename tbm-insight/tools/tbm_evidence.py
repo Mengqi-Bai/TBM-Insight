@@ -415,16 +415,18 @@ def retrieve(root, query, config, limit=5, mode="auto", **filters):
         return {"status": "not_needed", "route": route, "standards": [], "cases": [],
                 "suggested_tool": "query_tbm_daily_summary" if route == "daily_progress" else None}
     code = canonical_code(filters.get("standard", "") or query)
-    if not (root / "index" / "evidence.sqlite").exists():
+    index = root / "index" / "evidence.sqlite"
+    if not index.is_file():
         raise ValueError("Index missing. Run build first")
-    db = connection(root)
+    db = sqlite3.connect(index.resolve().as_uri() + "?mode=ro", uri=True, timeout=60)
+    db.row_factory = sqlite3.Row
     try:
         if db.execute("SELECT value FROM settings WHERE key='embedding'").fetchone() is None:
             raise ValueError("Index missing. Run build first")
         if db.execute("SELECT value FROM settings WHERE key='embedding'").fetchone()[0] != model_id(config):
             raise ValueError("Query embedding configuration does not match the index")
         rows = [dict(row) for row in db.execute("""
-            SELECT chunks.*, documents.metadata, documents.snapshot, documents.hash, documents.relative_path
+            SELECT chunks.*, documents.metadata, documents.hash, documents.relative_path
             FROM chunks JOIN documents ON documents.id=chunks.doc_id WHERE documents.active=1""")]
         for row in rows:
             row["data"] = json.loads(row["data"])
@@ -615,12 +617,13 @@ def main():
         return 1
 
 
-def search_and_save(root, query, config, limit=5, mode="auto", **filters):
+def search_and_save(root, query, config, limit=5, mode="auto", *, output_dir=None, **filters):
     result = retrieve(root, query, config, limit, mode, **filters)
     if result["status"] == "not_needed":
         return result
     payload = json.dumps(result, ensure_ascii=False, sort_keys=True)
-    target = root / "results" / f"{sha256(payload.encode()).hexdigest()}.json"
+    directory = output_dir if output_dir is not None else root / "results"
+    target = directory / f"{sha256(payload.encode()).hexdigest()}.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     result["result_file"] = str(target.resolve())
     if not target.exists():

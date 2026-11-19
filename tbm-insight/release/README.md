@@ -11,4 +11,4 @@ python -m pip install --target tbm-insight/.runtime/python/Lib/site-packages -r 
 python -B tbm-insight/release/pack-installed-runtime.py . ./TBM-Insight-Windows-x64.zip
 ```
 
-源码目录用于 Git 仓库，便携 ZIP 用作发布附件。发布内容排除个人设置、凭据、工程原件、知识库索引、科研项目、运行输出及缓存。随包保留依赖许可。
+源码目录用于 Git 仓库，便携 ZIP 用作发布附件。打包时会随包收录 `tbm-insight/knowledge/` 中准备好的 `sources`、`index` 和 `versions`，用于默认离线检索和打开规范原件。纯源码检出可单独放入这三项资料目录后再打包。个人设置、凭据、PLC 归档、换刀台账、科研项目和运行输出不进入发行包。
